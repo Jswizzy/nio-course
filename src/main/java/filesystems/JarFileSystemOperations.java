@@ -28,12 +28,12 @@ public class JarFileSystemOperations {
             Files.copy(a, b);
 
             Path binDir = zipFS.getPath("bin/");
-            Path binfile = zipFS.getPath("bin/ints.bin");
+            Path binFile = zipFS.getPath("bin/ints.bin");
 
             zipFS.provider().createDirectory(binDir);
 
             OutputStream os =
-                    zipFS.provider().newOutputStream(binfile, StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE);
+                    zipFS.provider().newOutputStream(binFile, StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE);
             DataOutputStream dos = new DataOutputStream(os);
             dos.writeInt(10);
             dos.writeInt(20);
